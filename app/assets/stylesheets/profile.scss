@@ -47,3 +47,30 @@
     justify-content: center;
   }
 }
+
+#user-list{
+  background-color: #fff;
+  min-height: 500px;
+  .users{
+    border-bottom: 1px solid #BBBBBB;
+    padding: 10px 0;
+    .flex {
+      align-items: center;
+    }
+    .tweet-button-white {
+      margin-left: 50px;
+    }
+    h2 {
+      font-size: 20px;
+      margin: 0;
+    }
+    p { margin: 0; }
+    img {
+      width: 50px;
+    }
+    .check {
+      width: 25px;
+    }
+  }
+
+}

@@ -44,11 +44,11 @@
             </div>
             <div class="col-md-4">
               <p>Following</p>
-              <p></p>
+              <p><%= @currentUser.followees.count %></p>
             </div>
             <div class="col-md-4">
               <p>Followers</p>
-              <p></p>
+              <p><%= @currentUser.followers.count %></p>
             </div>
           </div>
       </div>
@@ -66,11 +66,17 @@
     <div id="user-list" class="col-md-4">
       <h2>Who to follow</h2>
       <% @potentialFollows.each do |user| %>
-          <div class="users flex">
+          <div class="users">
+            <div class="flex">
             <%= image_tag('profile') %>
             <h2><%= user.full_name %><%= image_tag('check', class:"check") %></h2>
             <p><%= user.email %></p>
-            <%= button_to("Follow", follow_path(user.id), method: :put, class: "tweet-button-white")%>
+            </div>
+            <% if @currentUser.followees.include?(user)%>
+                <%= button_to "Unfollow", {controller: :follows, action: :destroy, id: user.id}, method: :delete, class: "tweet-button-white" %>
+            <% else %>
+                <%= button_to("Follow", follow_path(user.id), method: :put, class: "tweet-button-white") %>
+          <% end %>
           </div>
       <% end %>
     </div>
