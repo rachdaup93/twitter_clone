@@ -7,7 +7,7 @@ class FollowsController < ApplicationController
     puts @follower
     @currentUser.followees << @follower
     if @currentUser.followees.include?(@follower)
-      flash[:notice] = "You are now following #{@currentUser.full_name}"
+      flash[:notice] = "You are now following #{@follower.full_name}"
     else
       flash[:error] = "Something else happened"
     end

@@ -5,7 +5,9 @@ class CreateFollowers < ActiveRecord::Migration[5.1]
       t.integer :followee_id
       t.timestamps
     end
-    add_index :followships, [:follower_id, :followee_id]
+    add_index :followships, :follower_id
+    add_index :followships, :followee_id
+    add_index :followships, [:follower_id, :followee_id], unique: true
   end
 
   def down
