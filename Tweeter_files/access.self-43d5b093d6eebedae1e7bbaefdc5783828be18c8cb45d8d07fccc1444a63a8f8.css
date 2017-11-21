@@ -1,0 +1,99 @@
+/* line 4, /Users/rachelledauphin/Desktop/Ruby_Practice/Sites/03/tweeter/app/assets/stylesheets/access.scss */
+body {
+  background-color: #E6ECF0;
+}
+
+/* line 8, /Users/rachelledauphin/Desktop/Ruby_Practice/Sites/03/tweeter/app/assets/stylesheets/access.scss */
+#login .banner,
+#profile nav {
+  position: relative;
+  height: 60px;
+  background-color: #fff;
+  box-shadow: 5px 0 5px #2E2F30;
+  align-items: center;
+}
+
+/* line 17, /Users/rachelledauphin/Desktop/Ruby_Practice/Sites/03/tweeter/app/assets/stylesheets/access.scss */
+#user-list {
+  background-color: #fff;
+}
+/* line 19, /Users/rachelledauphin/Desktop/Ruby_Practice/Sites/03/tweeter/app/assets/stylesheets/access.scss */
+#user-list .users {
+  align-items: center;
+}
+
+/* line 25, /Users/rachelledauphin/Desktop/Ruby_Practice/Sites/03/tweeter/app/assets/stylesheets/access.scss */
+#profile {
+  margin: 0;
+}
+/* line 27, /Users/rachelledauphin/Desktop/Ruby_Practice/Sites/03/tweeter/app/assets/stylesheets/access.scss */
+#profile nav {
+  justify-content: space-between;
+  padding: 0 5%;
+}
+/* line 32, /Users/rachelledauphin/Desktop/Ruby_Practice/Sites/03/tweeter/app/assets/stylesheets/access.scss */
+#profile #content {
+  width: 90%;
+  max-width: 1900px;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+/* line 37, /Users/rachelledauphin/Desktop/Ruby_Practice/Sites/03/tweeter/app/assets/stylesheets/access.scss */
+#profile #content .col-md-3 {
+  padding: 0;
+}
+/* line 40, /Users/rachelledauphin/Desktop/Ruby_Practice/Sites/03/tweeter/app/assets/stylesheets/access.scss */
+#profile #content #cover {
+  width: 100%;
+}
+/* line 43, /Users/rachelledauphin/Desktop/Ruby_Practice/Sites/03/tweeter/app/assets/stylesheets/access.scss */
+#profile #content #user-info {
+  background-color: #fff;
+  padding: 0 15px;
+}
+/* line 46, /Users/rachelledauphin/Desktop/Ruby_Practice/Sites/03/tweeter/app/assets/stylesheets/access.scss */
+#profile #content #user-info .flex {
+  align-items: flex-start;
+}
+/* line 49, /Users/rachelledauphin/Desktop/Ruby_Practice/Sites/03/tweeter/app/assets/stylesheets/access.scss */
+#profile #content #user-info h1 {
+  font-size: 23px;
+  font-weight: 800;
+}
+/* line 53, /Users/rachelledauphin/Desktop/Ruby_Practice/Sites/03/tweeter/app/assets/stylesheets/access.scss */
+#profile #content #user-info img {
+  width: 32%;
+  min-width: 83px;
+  position: relative;
+  top: -27px;
+  border: 4px solid #fff;
+  border-radius: 50%;
+}
+/* line 63, /Users/rachelledauphin/Desktop/Ruby_Practice/Sites/03/tweeter/app/assets/stylesheets/access.scss */
+#profile #profileModal .modal-body {
+  justify-content: center;
+}
+
+/* line 68, /Users/rachelledauphin/Desktop/Ruby_Practice/Sites/03/tweeter/app/assets/stylesheets/access.scss */
+#login .banner {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 22%;
+}
+/* line 72, /Users/rachelledauphin/Desktop/Ruby_Practice/Sites/03/tweeter/app/assets/stylesheets/access.scss */
+#login .banner .login-logo {
+  height: 25px;
+}
+
+/* line 76, /Users/rachelledauphin/Desktop/Ruby_Practice/Sites/03/tweeter/app/assets/stylesheets/access.scss */
+a,
+a:active,
+a:visited,
+a:focus,
+input:focus,
+button,
+button:focus,
+button:active,
+button:visited {
+  outline: none;
+}

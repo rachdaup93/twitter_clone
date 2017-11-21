@@ -1,0 +1,12 @@
+<section id="new-tweets">
+  <div class="form flex">
+    <%= image_tag('profile') %>
+    <%= form_for(:tweet, url: { controller: :tweets, action: :create }) do |f| %>
+        <%= f.text_area(:description, maxlength: 240, class: "tweet_description", placeholder: "What's happening?", required: true) %>
+        <div class="footer flex">
+          <span class="word-count">240 </span>
+          <%= submit_tag("Tweet", class: "tweet-button")%>
+        </div>
+    <% end %>
+  </div>
+</section>

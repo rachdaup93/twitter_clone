@@ -1,0 +1,35 @@
+<div id="<%= dom_id(tweet[:tweet])%>" class="tweet panel panel-default">
+  <div class="header flex">
+    <div class="flex">
+      <%= image_tag('profile') %>
+      <span>
+          <h2><%= tweet[:author].full_name %><%= image_tag('check', id:"check") %></h2>
+          <p><%= tweet[:author].email %></p>
+        </span>
+    </div>
+    <div>
+      <% if tweet[:tweet].likers.include?(current_user)  %>
+        <%= link_to('', dislikes_tweet_path(tweet[:tweet]), method: :post, remote: true, class: "tweet-likes glyphicon glyphicon-heart like-active") %>
+        <% else %>
+          <%= link_to('', likes_tweet_path(tweet[:tweet]), method: :post, remote: true, class: "tweet-likes glyphicon glyphicon-heart-empty") %>
+    <% end %>
+      <% if tweet[:tweet].user === current_user %>
+          <span class="dropdown">
+            <button class="dropdown-toggle" type="button" id="twitter-menu" data-toggle="dropdown"><span class="glyphicon glyphicon-option-vertical"></span></button>
+            <ul class="dropdown-menu" aria-labelledby="twitter-menu">
+              <li><%= button_to('Edit', edit_tweet_path(tweet[:tweet]), method: :get, remote: true, "data-target": "#profileModal", "data-toggle":"modal") %></li>
+              <li><%= button_to('Delete', delete_tweet_path(tweet[:tweet]), method: :get, remote: true, "data-target": "#profileModal", "data-toggle":"modal")%></li>
+            </ul>
+          </span>
+      <% end %>
+    </div>
+  </div>
+  <h1><%= tweet[:tweet].description %></h1>
+  <div class="footer flex">
+    <div class="favorites">
+      <p><b><%= tweet[:tweet].likes %></b></p>
+      <p>FAVORITES</p>
+    </div>
+    <p><%= tweet[:formattedDate] %></p>
+  </div>
+</div>

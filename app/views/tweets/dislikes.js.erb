@@ -1,0 +1,2 @@
+var tweet = "<%= j render(partial: 'applications/tweet_show', locals:{ tweet: @tweet, current_user: @currentUser } ) %>"
+$("#<%= dom_id @tweet[:tweet] %>").replaceWith(tweet)

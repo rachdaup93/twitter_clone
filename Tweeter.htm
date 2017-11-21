@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<!-- saved from url=(0029)http://localhost:3000/profile -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Tweeter</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="./Tweeter_files/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" media="screen" href="./Tweeter_files/application.self-f0d704deea029cf000697e2c0181ec173a1b474645466ed843eb5ee7bb215794.css">
+<link rel="stylesheet" media="screen" href="./Tweeter_files/access.self-43d5b093d6eebedae1e7bbaefdc5783828be18c8cb45d8d07fccc1444a63a8f8.css">
+<link rel="stylesheet" media="screen" href="./Tweeter_files/tweets.self-abc1323efdbb72b92f93f2f05b069a7d2ac2ab73384beaf56f54514223644ecf.css">
+<link rel="stylesheet" media="screen" href="./Tweeter_files/users.self-a5c069cac20f9a96471e10a0156ab75dfdc8579c809e456db402dd51b92db354.css">
+    <meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="QgofrKQDCwxeyS63ZczPa8ATtR+w+cJndCL+/IkGvcfELScm6ML/6NGaJFXFy3reb+ZM2cyt+7TuNp8VP0Jf3A==">
+
+  </head>
+
+  <body cz-shortcut-listen="true">
+    <main id="profile">
+  <header>
+    <nav class="flex">
+      <div class="links">
+        <span class="glyphicon glyphicon-home"></span>
+        <a href="http://localhost:3000/">Home</a>
+        <span class="glyphicon glyphicon-flash"></span>
+        <span>Moments</span>
+        <span class="glyphicon glyphicon-comment"></span>
+        <span>Notifications</span>
+        <span class="glyphicon glyphicon-envelope"></span>
+        <span>Messages</span>
+      </div>
+      <img class="logo" src="./Tweeter_files/logo_blue-d913d7454e07fe57d106552fd83cdc80d78ada9bbf4af3d26a91fcc7f30dfb19.svg" alt="Logo blue">
+      <div>
+        <span class="dropdown">
+          <span class="dropdown-toggle" type="button" id="profile-menu" data-toggle="dropdown">
+            <img src="./Tweeter_files/profile-5780b3665cd7e6fcbd2fedbd102139c6f16882b4d2236cf39585096f5ffb7ccb.svg" alt="Profile">
+          </span>
+          <ul class="dropdown-menu" aria-labelledby="profile-menu">
+            <li><a href="http://localhost:3000/logout">Logout</a></li>
+          </ul>
+        </span>
+        <button class="tweet-button">Tweet</button>
+      </div>
+    </nav>
+    
+  </header>
+  <div id="content">
+    <div class="col-md-3">
+      <img id="cover" src="./Tweeter_files/cover-d553200857edcd939fe501fdba425768cde59dc9f93fdf9b34e4f3c49be2b7bc.jpg" alt="Cover">
+      <div id="user-info">
+        <div class="flex">
+          <img src="./Tweeter_files/profile-5780b3665cd7e6fcbd2fedbd102139c6f16882b4d2236cf39585096f5ffb7ccb.svg" alt="Profile">
+          <div>
+            <h1>John Smith</h1>
+            <p>test@test.com</p>
+          </div>
+        </div>
+        <div>
+
+        </div>
+
+      </div>
+    </div>
+    <div class="col-md-5">
+      <section id="new-tweets">
+  <div class="form flex">
+    <img src="./Tweeter_files/profile-5780b3665cd7e6fcbd2fedbd102139c6f16882b4d2236cf39585096f5ffb7ccb.svg" alt="Profile">
+    <form action="http://localhost:3000/tweets" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="QgofrKQDCwxeyS63ZczPa8ATtR+w+cJndCL+/IkGvcfELScm6ML/6NGaJFXFy3reb+ZM2cyt+7TuNp8VP0Jf3A==">
+        <textarea maxlength="240" class="tweet_description" placeholder="What&#39;s happening?" required="required" name="tweet[description]" id="tweet_description"></textarea>
+        <div class="footer flex">
+          <span class="word-count">240 </span>
+          <input type="submit" name="commit" value="Tweet" class="tweet-button" data-disable-with="Tweet">
+        </div>
+</form>  </div>
+</section>
+          <div id="tweet_13" class="tweet panel panel-default">
+  <div class="header flex">
+    <div class="flex">
+      <img src="./Tweeter_files/profile-5780b3665cd7e6fcbd2fedbd102139c6f16882b4d2236cf39585096f5ffb7ccb.svg" alt="Profile">
+      <span>
+          <h2>John Smith<img id="check" src="./Tweeter_files/check-59ee4aabf19e2e281e70698e57108b7085ea4951e407a18485bbd67d7603574f.svg" alt="Check"></h2>
+          <p>test@test.com</p>
+        </span>
+    </div>
+    <div>
+          <a class="tweet-likes glyphicon glyphicon-heart-empty" data-remote="true" rel="nofollow" data-method="post" href="http://localhost:3000/tweets/13/likes"></a>
+          <span class="dropdown">
+            <button class="dropdown-toggle" type="button" id="twitter-menu" data-toggle="dropdown"><span class="glyphicon glyphicon-option-vertical"></span></button>
+            <ul class="dropdown-menu" aria-labelledby="twitter-menu">
+              <li><form class="button_to" method="get" action="http://localhost:3000/tweets/13/edit" data-remote="true"><input data-target="#profileModal" data-toggle="modal" type="submit" value="Edit"></form></li>
+              <li><form class="button_to" method="get" action="http://localhost:3000/tweets/13/delete" data-remote="true"><input data-target="#profileModal" data-toggle="modal" type="submit" value="Delete"></form></li>
+            </ul>
+          </span>
+    </div>
+  </div>
+  <h1>TESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTEST</h1>
+  <div class="footer flex">
+    <div class="favorites">
+      <p><b>0</b></p>
+      <p>FAVORITES</p>
+    </div>
+    <p>21 Nov 15:48</p>
+  </div>
+</div>
+    <div id="tweet_11" class="tweet panel panel-default">
+  <div class="header flex">
+    <div class="flex">
+      <img src="./Tweeter_files/profile-5780b3665cd7e6fcbd2fedbd102139c6f16882b4d2236cf39585096f5ffb7ccb.svg" alt="Profile">
+      <span>
+          <h2>Rachelle Dauphin<img id="check" src="./Tweeter_files/check-59ee4aabf19e2e281e70698e57108b7085ea4951e407a18485bbd67d7603574f.svg" alt="Check"></h2>
+          <p>red@test.com</p>
+        </span>
+    </div>
+    <div>
+        <a class="tweet-likes glyphicon glyphicon-heart like-active" data-remote="true" rel="nofollow" data-method="post" href="http://localhost:3000/tweets/11/dislikes"></a>
+    </div>
+  </div>
+  <h1>test</h1>
+  <div class="footer flex">
+    <div class="favorites">
+      <p><b>1</b></p>
+      <p>FAVORITES</p>
+    </div>
+    <p>21 Nov 15:37</p>
+  </div>
+</div>
+    <div id="tweet_10" class="tweet panel panel-default">
+  <div class="header flex">
+    <div class="flex">
+      <img src="./Tweeter_files/profile-5780b3665cd7e6fcbd2fedbd102139c6f16882b4d2236cf39585096f5ffb7ccb.svg" alt="Profile">
+      <span>
+          <h2>Rachelle Dauphin<img id="check" src="./Tweeter_files/check-59ee4aabf19e2e281e70698e57108b7085ea4951e407a18485bbd67d7603574f.svg" alt="Check"></h2>
+          <p>red@test.com</p>
+        </span>
+    </div>
+    <div>
+        <a class="tweet-likes glyphicon glyphicon-heart like-active" data-remote="true" rel="nofollow" data-method="post" href="http://localhost:3000/tweets/10/dislikes"></a>
+    </div>
+  </div>
+  <h1>Blah blah</h1>
+  <div class="footer flex">
+    <div class="favorites">
+      <p><b>2</b></p>
+      <p>FAVORITES</p>
+    </div>
+    <p>21 Nov 14:42</p>
+  </div>
+</div>
+
+    </div>
+    <div id="user-list" class="col-md-4">
+      <h2>Who to follow</h2>
+          <div class="users flex">
+            <img src="./Tweeter_files/profile-5780b3665cd7e6fcbd2fedbd102139c6f16882b4d2236cf39585096f5ffb7ccb.svg" alt="Profile">
+            <span>
+              <h2>Rachelle Dauphin<img id="check" src="./Tweeter_files/check-59ee4aabf19e2e281e70698e57108b7085ea4951e407a18485bbd67d7603574f.svg" alt="Check"></h2>
+              <p>red@test.com</p>
+             </span>
+          </div>
+    </div>
+  </div>
+  <!-- Modal -->
+  <div class="modal fade" id="profileModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-body flex"></div>
+      </div>
+    </div>
+  </div>
+</main>
+
+    <script src="./Tweeter_files/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js"></script>
+<script src="./Tweeter_files/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js"></script>
+<script src="./Tweeter_files/turbolinks.self-1d1fddf91adc38ac2045c51f0a3e05ca97d07d24d15a4dcbf705009106489e69.js"></script>
+<script src="./Tweeter_files/access.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js"></script>
+<script src="./Tweeter_files/action_cable.self-69fddfcddf4fdef9828648f9330d6ce108b93b82b0b8d3affffc59a114853451.js"></script>
+<script src="./Tweeter_files/cable.self-8484513823f404ed0c0f039f75243bfdede7af7919dda65f2e66391252443ce9.js"></script>
+<script src="./Tweeter_files/tweets.self-36eafc157aaddfca40aaebebf269d9a9d7ae38201ebbe0ad9c5a416ac3e9e0e3.js"></script>
+<script src="./Tweeter_files/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js"></script>
+<script src="./Tweeter_files/application.self-66347cf0a4cb1f26f76868b4697a9eee457c8c3a6da80c6fdd76ff77e911715e.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="./Tweeter_files/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  
+
+
+</body></html>

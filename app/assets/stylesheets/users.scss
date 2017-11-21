@@ -1,0 +1,85 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#signup {
+  width: 100vw;
+  height: 100vh;
+  background-color: #FFFFFF;
+
+  .banner {
+    background: #5DAEE8; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(left, #5DAEE8, #3fcc96); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right, #5DAEE8, #3fcc96); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right, #5DAEE8, #3fcc96); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to right, #5DAEE8, #3fcc96); /* Standard syntax */
+
+    display: flex;
+    height: 46px;
+    position: relative;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .banner,
+  .links a {
+    color: #fff;
+  }
+  .links {
+    width: 40%;
+  }
+
+  .links > span {
+    margin-left: 10px;
+  }
+}
+
+.logo {
+  position: absolute;
+  height: 25px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+
+.form-box {
+  width: 392px;
+  margin: 0 auto;
+  padding: 0;
+  padding-top: 130px;
+
+}
+
+h1 {
+  font-size: 2.7rem;
+}
+
+h1,
+.form-input,
+.form-button {
+  font-weight: bold;
+}
+
+.form-input {
+  width: 105%;
+  height: 46px;
+  margin: 15px 0;
+  font-size: 18px;
+}
+
+.form-button {
+  width: 100%;
+  font-size: 18px;
+  background-color: #1DA1F2;
+  border: none;
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 100px;
+  margin: 10px 0;
+}
+
+.form-button:hover {
+  background-color: #0F6FBC;
+}

@@ -1,0 +1,131 @@
+/* line 4, /Users/rachelledauphin/Desktop/Ruby_Practice/Sites/03/tweeter/app/assets/stylesheets/tweets.scss */
+.flex {
+  display: flex;
+}
+
+/* line 7, /Users/rachelledauphin/Desktop/Ruby_Practice/Sites/03/tweeter/app/assets/stylesheets/tweets.scss */
+.tweet {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 5px;
+}
+/* line 11, /Users/rachelledauphin/Desktop/Ruby_Practice/Sites/03/tweeter/app/assets/stylesheets/tweets.scss */
+.tweet .flex {
+  align-items: center;
+  justify-content: space-between;
+}
+/* line 15, /Users/rachelledauphin/Desktop/Ruby_Practice/Sites/03/tweeter/app/assets/stylesheets/tweets.scss */
+.tweet h1 {
+  font-weight: 200;
+  padding: 0 10px;
+  word-wrap: break-word;
+}
+/* line 20, /Users/rachelledauphin/Desktop/Ruby_Practice/Sites/03/tweeter/app/assets/stylesheets/tweets.scss */
+.tweet h2 {
+  font-size: 20px;
+}
+/* line 23, /Users/rachelledauphin/Desktop/Ruby_Practice/Sites/03/tweeter/app/assets/stylesheets/tweets.scss */
+.tweet #check {
+  height: 20px;
+}
+/* line 26, /Users/rachelledauphin/Desktop/Ruby_Practice/Sites/03/tweeter/app/assets/stylesheets/tweets.scss */
+.tweet button,
+.tweet input {
+  backgrond: none;
+  border: none;
+}
+/* line 32, /Users/rachelledauphin/Desktop/Ruby_Practice/Sites/03/tweeter/app/assets/stylesheets/tweets.scss */
+.tweet button:focus {
+  outline: none;
+}
+/* line 36, /Users/rachelledauphin/Desktop/Ruby_Practice/Sites/03/tweeter/app/assets/stylesheets/tweets.scss */
+.tweet .tweet-likes {
+  color: inherit;
+}
+/* line 40, /Users/rachelledauphin/Desktop/Ruby_Practice/Sites/03/tweeter/app/assets/stylesheets/tweets.scss */
+.tweet .like-active,
+.tweet .tweet-likes:hover {
+  color: #E35480;
+  text-decoration: none;
+}
+/* line 46, /Users/rachelledauphin/Desktop/Ruby_Practice/Sites/03/tweeter/app/assets/stylesheets/tweets.scss */
+.tweet .footer {
+  border-top: 1px solid #DDD;
+  border-bottom: 1px solid #DDD;
+}
+/* line 49, /Users/rachelledauphin/Desktop/Ruby_Practice/Sites/03/tweeter/app/assets/stylesheets/tweets.scss */
+.tweet .footer .favorites {
+  border-right: 1px solid #DDD;
+  padding: 5px;
+  color: #BBB;
+}
+
+/* line 57, /Users/rachelledauphin/Desktop/Ruby_Practice/Sites/03/tweeter/app/assets/stylesheets/tweets.scss */
+#new-tweets,
+#edit-tweets {
+  width: 100%;
+  background-color: #EAF5F3;
+  padding: 10px;
+}
+/* line 63, /Users/rachelledauphin/Desktop/Ruby_Practice/Sites/03/tweeter/app/assets/stylesheets/tweets.scss */
+#new-tweets form,
+#edit-tweets form {
+  width: 90%;
+}
+/* line 65, /Users/rachelledauphin/Desktop/Ruby_Practice/Sites/03/tweeter/app/assets/stylesheets/tweets.scss */
+#new-tweets form #tweet_description,
+#edit-tweets form #tweet_description {
+  width: 100%;
+  height: 35px;
+  border: 1px solid #3BA18C;
+  border-radius: 5px;
+  transition: height 0.5s;
+}
+/* line 72, /Users/rachelledauphin/Desktop/Ruby_Practice/Sites/03/tweeter/app/assets/stylesheets/tweets.scss */
+#new-tweets form #tweet_description:focus,
+#edit-tweets form #tweet_description:focus {
+  outline: #3BA18C auto 5px;
+}
+/* line 76, /Users/rachelledauphin/Desktop/Ruby_Practice/Sites/03/tweeter/app/assets/stylesheets/tweets.scss */
+#new-tweets .flex,
+#edit-tweets .flex {
+  justify-content: flex-end;
+}
+/* line 80, /Users/rachelledauphin/Desktop/Ruby_Practice/Sites/03/tweeter/app/assets/stylesheets/tweets.scss */
+#new-tweets .form.flex,
+#edit-tweets .form.flex {
+  align-items: flex-start;
+}
+/* line 83, /Users/rachelledauphin/Desktop/Ruby_Practice/Sites/03/tweeter/app/assets/stylesheets/tweets.scss */
+#new-tweets .footer.flex,
+#edit-tweets .footer.flex {
+  align-items: center;
+}
+/* line 85, /Users/rachelledauphin/Desktop/Ruby_Practice/Sites/03/tweeter/app/assets/stylesheets/tweets.scss */
+#new-tweets .footer.flex #word-count,
+#edit-tweets .footer.flex #word-count {
+  padding-right: 5px;
+  color: #3BA18C;
+}
+
+/* line 92, /Users/rachelledauphin/Desktop/Ruby_Practice/Sites/03/tweeter/app/assets/stylesheets/tweets.scss */
+.tweet-button,
+.tweet-button-white {
+  border-radius: 18px;
+  color: #fff;
+  padding: 6px 16px;
+}
+
+/* line 99, /Users/rachelledauphin/Desktop/Ruby_Practice/Sites/03/tweeter/app/assets/stylesheets/tweets.scss */
+.tweet-button {
+  border: none;
+  background-color: #5DB4A3;
+  color: #fff;
+}
+
+/* line 105, /Users/rachelledauphin/Desktop/Ruby_Practice/Sites/03/tweeter/app/assets/stylesheets/tweets.scss */
+.tweet-button-white {
+  border: 1px solid #5DB4A3;
+  background-color: #FFFFFF;
+  color: #5DB4A3;
+}

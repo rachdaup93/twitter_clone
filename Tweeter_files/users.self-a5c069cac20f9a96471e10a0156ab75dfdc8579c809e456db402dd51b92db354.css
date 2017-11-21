@@ -1,0 +1,91 @@
+/* line 5, /Users/rachelledauphin/Desktop/Ruby_Practice/Sites/03/tweeter/app/assets/stylesheets/users.scss */
+#signup {
+  width: 100vw;
+  height: 100vh;
+  background-color: #FFFFFF;
+}
+/* line 10, /Users/rachelledauphin/Desktop/Ruby_Practice/Sites/03/tweeter/app/assets/stylesheets/users.scss */
+#signup .banner {
+  background: #5DAEE8;
+  /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(left, #5DAEE8, #3fcc96);
+  /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(right, #5DAEE8, #3fcc96);
+  /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(right, #5DAEE8, #3fcc96);
+  /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to right, #5DAEE8, #3fcc96);
+  /* Standard syntax */
+  display: flex;
+  height: 46px;
+  position: relative;
+  justify-content: flex-end;
+  align-items: center;
+}
+/* line 24, /Users/rachelledauphin/Desktop/Ruby_Practice/Sites/03/tweeter/app/assets/stylesheets/users.scss */
+#signup .banner,
+#signup .links a {
+  color: #fff;
+}
+/* line 28, /Users/rachelledauphin/Desktop/Ruby_Practice/Sites/03/tweeter/app/assets/stylesheets/users.scss */
+#signup .links {
+  width: 40%;
+}
+/* line 32, /Users/rachelledauphin/Desktop/Ruby_Practice/Sites/03/tweeter/app/assets/stylesheets/users.scss */
+#signup .links > span {
+  margin-left: 10px;
+}
+
+/* line 37, /Users/rachelledauphin/Desktop/Ruby_Practice/Sites/03/tweeter/app/assets/stylesheets/users.scss */
+.logo {
+  position: absolute;
+  height: 25px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* line 47, /Users/rachelledauphin/Desktop/Ruby_Practice/Sites/03/tweeter/app/assets/stylesheets/users.scss */
+.form-box {
+  width: 392px;
+  margin: 0 auto;
+  padding: 0;
+  padding-top: 130px;
+}
+
+/* line 55, /Users/rachelledauphin/Desktop/Ruby_Practice/Sites/03/tweeter/app/assets/stylesheets/users.scss */
+h1 {
+  font-size: 2.7rem;
+}
+
+/* line 59, /Users/rachelledauphin/Desktop/Ruby_Practice/Sites/03/tweeter/app/assets/stylesheets/users.scss */
+h1,
+.form-input,
+.form-button {
+  font-weight: bold;
+}
+
+/* line 65, /Users/rachelledauphin/Desktop/Ruby_Practice/Sites/03/tweeter/app/assets/stylesheets/users.scss */
+.form-input {
+  width: 105%;
+  height: 46px;
+  margin: 15px 0;
+  font-size: 18px;
+}
+
+/* line 72, /Users/rachelledauphin/Desktop/Ruby_Practice/Sites/03/tweeter/app/assets/stylesheets/users.scss */
+.form-button {
+  width: 100%;
+  font-size: 18px;
+  background-color: #1DA1F2;
+  border: none;
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 100px;
+  margin: 10px 0;
+}
+
+/* line 83, /Users/rachelledauphin/Desktop/Ruby_Practice/Sites/03/tweeter/app/assets/stylesheets/users.scss */
+.form-button:hover {
+  background-color: #0F6FBC;
+}

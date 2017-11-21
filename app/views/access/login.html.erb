@@ -1,0 +1,21 @@
+<main id="login">
+<nav class="banner">
+  <div class="links">
+    <%= image_tag('logo_blue', class: 'login-logo')%>
+    <b><%= link_to("Home", "/")%></b>
+    <b><%= link_to("About", "#")%></b>
+  </div>
+  <span>Language: <b>English</b></span>
+</nav>
+  <%= flash_messages() %>
+  <div class="panel panel-default">
+    <div class="container form-box">
+      <h1>Log into Twitter.</h1>
+      <%= render(partial: 'applications/log_in_form')%>
+      <div>
+        <span>New to Twitter?</span>
+        <%= link_to("Sign up", '/signup', class: "link-button")%>
+      </div>
+    </div>
+  </div>
+</main>

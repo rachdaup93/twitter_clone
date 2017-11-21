@@ -1,0 +1,86 @@
+<main id="profile">
+  <header>
+    <nav class="flex">
+      <div class="links">
+        <span class="glyphicon glyphicon-home"></span>
+        <%= link_to("Home", '/') %>
+        <span class="glyphicon glyphicon-flash"></span>
+        <span>Moments</span>
+        <span class="glyphicon glyphicon-comment"></span>
+        <span>Notifications</span>
+        <span class="glyphicon glyphicon-envelope"></span>
+        <span>Messages</span>
+      </div>
+      <%= image_tag('logo_blue', class:"logo")%>
+      <div>
+        <span class="dropdown">
+          <span class="dropdown-toggle" type="button" id="profile-menu" data-toggle="dropdown">
+            <%= image_tag('profile') %>
+          </span>
+          <ul class="dropdown-menu" aria-labelledby="profile-menu">
+            <li><%= link_to('Logout', logout_path) %></li>
+          </ul>
+        </span>
+        <button class="tweet-button">Tweet</button>
+      </div>
+    </nav>
+    <%= flash_messages() %>
+  </header>
+  <div id="content">
+    <div class="col-md-3">
+      <%= image_tag('cover', id: "cover") %>
+      <div id="user-info">
+        <div class="flex">
+          <%= image_tag('profile')%>
+          <div>
+            <h1><%= @currentUser.full_name %></h1>
+            <p><%= @currentUser.email %></p>
+          </div>
+        </div>
+          <div>
+            <div class="col-md-4">
+              <p>Tweets</p>
+              <%= link_to(@currentUser.tweets.count, profile_personal_path) %>
+            </div>
+            <div class="col-md-4">
+              <p>Following</p>
+              <p></p>
+            </div>
+            <div class="col-md-4">
+              <p>Followers</p>
+              <p></p>
+            </div>
+          </div>
+      </div>
+    </div>
+    <div class="col-md-5">
+      <%= render(partial: 'applications/tweet_new') %>
+      <section id="newsfeed">
+        <% if @personal %>
+          <%= my_tweet_list(@currentUser) %>
+          <% else %>
+            <%= tweet_list() %>
+        <% end %>
+      </section>
+    </div>
+    <div id="user-list" class="col-md-4">
+      <h2>Who to follow</h2>
+      <% @potentialFollows.each do |user| %>
+          <div class="users flex">
+            <%= image_tag('profile') %>
+            <h2><%= user.full_name %><%= image_tag('check', class:"check") %></h2>
+            <p><%= user.email %></p>
+            <%= button_to("Follow", follow_path(user.id), method: :put, class: "tweet-button-white")%>
+          </div>
+      <% end %>
+    </div>
+  </div>
+  <!-- Modal -->
+  <div class="modal fade" id="profileModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-body flex"></div>
+      </div>
+    </div>
+  </div>
+</main>
