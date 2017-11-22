@@ -1,0 +1,83 @@
+<main id="personal" class="profile">
+  <header>
+    <%= render(partial: 'applications/profile_nav')%>
+    <%= flash_messages() %>
+  </header>
+  <div id="jumbotron" class="flex">
+    <%= image_tag('cover', id: "cover") %>
+  </div>
+  <nav id="banner">
+    <div class="flex">
+      <div>
+        <div class="col-md-3">
+          <p>Tweets</p>
+          <%= link_to(@currentUser.tweets.count, profile_personal_path) %>
+        </div>
+        <div class="col-md-3">
+          <p>Following</p>
+          <p><%= @currentUser.followees.count %></p>
+        </div>
+        <div class="col-md-3">
+          <p>Followers</p>
+          <p><%= @currentUser.followers.count %></p>
+        </div>
+        <div class="col-md-3">
+          <p>Likes</p>
+          <p><%= @currentUser.likes.count %></p>
+        </div>
+      </div>
+      <%= link_to 'Edit Profile', edit_user_path(@currentUser), class: "tweet-button-white" %>
+    </div>
+  </nav>
+  <div id="content">
+    <div class="col-md-3">
+      <div id="user-info">
+        <div class="flex">
+          <%= image_tag('profile') %>
+          <div>
+            <h1><%= @currentUser.full_name %></h1>
+            <p><span class="glyphicon glyphicon-envelope"></span>
+              <%= @currentUser.email %></p>
+            <p><span class="glyphicon glyphicon-map-marker"></span>
+            <%= "Update you location."%></p>
+            <p><span class="glyphicon glyphicon-calendar"></span>
+              Joined
+            <%= @currentUser.created_at.to_formatted_s(:short)%></p>
+          </div>
+        </div>
+        <div>
+      </div>
+    </div>
+    </div>
+    <div class="col-md-5">
+      <section id="newsfeed">
+        <%= my_tweet_list(@currentUser) %>
+      </section>
+    </div>
+    <div id="user-list" class="col-md-4">
+      <h2>Who to follow</h2>
+      <% @potentialFollows.each do |user| %>
+          <div class="users">
+            <div class="flex">
+              <%= image_tag('profile') %>
+              <h2><%= user.full_name %><%= image_tag('check', class:"check") %></h2>
+              <p><%= user.email %></p>
+            </div>
+            <% if @currentUser.followees.include?(user)%>
+                <%= button_to "Unfollow", {controller: :follows, action: :destroy, id: user.id}, method: :delete, class: "tweet-button-white" %>
+            <% else %>
+                <%= button_to("Follow", follow_path(user.id), method: :put, class: "tweet-button-white") %>
+            <% end %>
+          </div>
+      <% end %>
+    </div>
+  </div>
+  <!-- Modal -->
+  <div class="modal fade" id="profileModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-body flex"></div>
+      </div>
+    </div>
+  </div>
+</main>

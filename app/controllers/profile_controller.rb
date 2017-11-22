@@ -10,7 +10,5 @@ class ProfileController < ApplicationController
   def personal
     @currentUser = current_user
     @potentialFollows = get_other_users
-    @personal = true
-    render(:index)
   end
 end

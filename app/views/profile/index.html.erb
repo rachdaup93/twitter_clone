@@ -1,4 +1,4 @@
-<main id="profile">
+<main class="profile">
   <header>
     <%= render(partial: 'applications/profile_nav')%>
     <%= flash_messages() %>
@@ -33,11 +33,7 @@
     <div class="col-md-5">
       <%= render(partial: 'applications/tweet_new') %>
       <section id="newsfeed">
-        <% if @personal %>
-          <%= my_tweet_list(@currentUser) %>
-          <% else %>
-            <%= tweet_list() %>
-        <% end %>
+        <%= tweet_list() %>
       </section>
     </div>
     <div id="user-list" class="col-md-4">

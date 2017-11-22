@@ -1,7 +1,8 @@
 // Place all the styles related to the profile controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-#profile{
+
+.profile{
   margin: 0;
   nav {
     justify-content: space-between;
@@ -72,5 +73,41 @@
       width: 25px;
     }
   }
+}
 
+#personal.profile {
+  #jumbotron {
+    height: 350px;
+    overflow-y: hidden;
+    align-items: center;
+    img {
+      width: 100%;
+    }
+  }
+  #user-info {
+    background-color: transparent;
+    .flex {
+      flex-direction: column;
+      img {
+        position: static;
+        width: 200px;
+        margin: -200px auto 0 auto;
+        border-width: 9px;
+      }
+    }
+  }
+  #banner {
+    .flex {
+      text-align: center;
+      align-items: center;
+      justify-content: space-between;
+      padding-left: 340px;
+      width: 90%;
+      height: inherit;
+      margin: 0 auto;
+      p {
+        margin: 0;
+      }
+    }
+  }
 }

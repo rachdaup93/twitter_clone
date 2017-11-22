@@ -2,7 +2,7 @@ class User < ApplicationRecord
 
   has_many :tweets
   has_many :tweet_likes, dependent: :delete_all
-  has_many :likes, class_name: "Tweet", through: :tweet_likes
+  has_many :likes, class_name: "Tweet", through: :tweet_likes, source: :tweet
 
   has_many :followee_followships, foreign_key: :follower_id, class_name: "Followship", dependent: :destroy
   has_many :followees, through: :followee_followships, source: :followee

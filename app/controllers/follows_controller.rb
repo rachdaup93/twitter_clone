@@ -10,7 +10,8 @@ class FollowsController < ApplicationController
     else
       flash[:error] = "Something else happened"
     end
-    redirect_to('/profile')
+    redirect_to '/profile'
+
   end
   def destroy
     @currentUser = current_user
@@ -22,6 +23,7 @@ class FollowsController < ApplicationController
     else
       flash[:notice] = "You unfollowed #{@follower.full_name}"
     end
-    redirect_to('/profile')
+    redirect_to '/profile'
+
   end
 end
