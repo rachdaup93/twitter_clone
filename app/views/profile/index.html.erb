@@ -1,29 +1,6 @@
 <main id="profile">
   <header>
-    <nav class="flex">
-      <div class="links">
-        <span class="glyphicon glyphicon-home"></span>
-        <%= link_to("Home", '/') %>
-        <span class="glyphicon glyphicon-flash"></span>
-        <span>Moments</span>
-        <span class="glyphicon glyphicon-comment"></span>
-        <span>Notifications</span>
-        <span class="glyphicon glyphicon-envelope"></span>
-        <span>Messages</span>
-      </div>
-      <%= image_tag('logo_blue', class:"logo")%>
-      <div>
-        <span class="dropdown">
-          <span class="dropdown-toggle" type="button" id="profile-menu" data-toggle="dropdown">
-            <%= image_tag('profile') %>
-          </span>
-          <ul class="dropdown-menu" aria-labelledby="profile-menu">
-            <li><%= link_to('Logout', logout_path) %></li>
-          </ul>
-        </span>
-        <button class="tweet-button">Tweet</button>
-      </div>
-    </nav>
+    <%= render(partial: 'applications/profile_nav')%>
     <%= flash_messages() %>
   </header>
   <div id="content">
