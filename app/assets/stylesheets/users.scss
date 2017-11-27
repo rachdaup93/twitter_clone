@@ -83,3 +83,29 @@ h1,
 .form-button:hover {
   background-color: #0F6FBC;
 }
+
+#edit-user-info {
+  .flex {
+    align-items: center !important;
+  }
+  input {
+    margin-bottom: 5px;
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #3BA18C;
+    border-radius: 5px;
+  }
+
+  #user_full_name {
+    font-size: 24px;
+    font-weight: 600;
+  }
+
+  #user_email {
+    color: #3BA18C;
+  }
+  .tweet-button-white {
+    margin-top: 10px;
+    border-radius: 20px;
+  }
+}

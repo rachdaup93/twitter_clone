@@ -32,6 +32,9 @@ a:hover {
         align-items: flex-start;
         a {
           width: 30%;
+          img {
+            width: 72px;
+          }
         }
       }
       h1 {
@@ -101,6 +104,9 @@ a:hover {
         border-radius: 50%;
         .edit-form {
           border-radius: 50%;
+        }
+        img {
+          width: 200px;
         }
       }
       img {
