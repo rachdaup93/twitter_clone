@@ -3,3 +3,17 @@ $('#jumbotron').append(editCoverImage)
 
 const editAvatarImage = "<%= j render(partial: 'applications/user_image_edit', locals: { user: @user, image: :avatar, imageType: 'profile' })%>"
 $('#profile-image').append(editAvatarImage)
+
+const editUserDetails = "<%= j render(partial: 'applications/user_info_edit', locals: { user: @user })%>"
+$('#user-details').html(editUserDetails)
+
+const editButton = "<%= j link_to 'Cancel ', '/profile/personal', id: "edit-profile-btn", class: "tweet-button" %>"
+$('#edit-profile-btn').replaceWith(editButton)
+
+$("#user_cover").change(function() {
+    readURL(this, '#cover');
+});
+
+$("#user_avatar").change(function() {
+    readURL(this, '#profile-image img');
+});

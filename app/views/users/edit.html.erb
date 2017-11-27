@@ -1,15 +1,11 @@
-<section id="edit-user">
+<section id="edit-user-info" style="width:33%;">
   <div class="form flex">
-    <%= form_for @user, html: { multipart: true } do |f| %>
-        <%= f.text_field :full_name %>
-        <span class="btn-file">
-            <span class="glyphicon glyphicon-picture"></span>
-          <%= f.file_field :image %>
-        </span>
-        <div class="footer flex btn-file">
-          <span class="glyphicon glyphicon-save">
-            <%= submit_tag '' %>
-          </span>
+    <%= form_for(@user, url: user_path(@user.id)) do |f| %>
+        <%= f.text_field :full_name, required: true %>
+        <%= f.text_field :email, disabled: true %>
+        <%= f.text_field :location %>
+        <div class="footer flex">
+          <%= submit_tag("Update", class: "tweet-button-white")%>
         </div>
     <% end %>
   </div>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171122210031) do
+ActiveRecord::Schema.define(version: 20171127175557) do
 
   create_table "followships", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "follower_id"
@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(version: 20171122210031) do
     t.string "cover_content_type"
     t.integer "cover_file_size"
     t.datetime "cover_updated_at"
+    t.string "location", default: "Update your location."
   end
 
 end

@@ -11,7 +11,7 @@ module ApplicationHelper
 
   def my_tweet_list(user)
     @tweetList = get_my_tweet_list(user.tweets)
-    puts user.tweets.class
+    @tweetList.sort! { |a,b| b[:tweet].created_at <=> a[:tweet].created_at }
     render(partial:'applications/tweet_list', local: @tweetList)
   end
 

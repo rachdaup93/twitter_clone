@@ -8,7 +8,7 @@ class UsersController < ApplicationController
 
   def create
     # binding.pry
-    @newUser = User.new(user_info_params)
+    @newUser = User.new(user_params)
     if @newUser.full_name.present? && @newUser.email.present? && @newUser.password.present?
       if @newUser.save
         flash[:notice] = "User was saved successfully."
@@ -61,6 +61,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:full_name, :email, :password, :avatar, :cover)
+    params.require(:user).permit(:full_name, :email, :password, :avatar, :cover, :location)
     end
 end

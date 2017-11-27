@@ -26,7 +26,7 @@
           <p><%= @currentUser.likes.count %></p>
         </div>
       </div>
-      <%= link_to 'Edit Profile', edit_user_path(@currentUser), remote: true, class: "tweet-button-white" %>
+      <%= link_to 'Edit Profile', edit_user_path(@currentUser), remote: true, id: "edit-profile-btn",class: "tweet-button-white" %>
     </div>
   </nav>
   <div id="content">
@@ -36,12 +36,12 @@
           <div id="profile-image">
             <%= image_tag get_avatar(@currentUser, 'medium'), class:"img-circle" %>
           </div>
-          <div>
+          <div id="user-details">
             <h1><%= @currentUser.full_name %></h1>
             <p><span class="glyphicon glyphicon-envelope"></span>
               <%= @currentUser.email %></p>
             <p><span class="glyphicon glyphicon-map-marker"></span>
-            <%= "Update you location."%></p>
+            <%= @currentUser.location %></p>
             <p><span class="glyphicon glyphicon-calendar"></span>
               Joined
             <%= @currentUser.created_at.to_formatted_s(:short)%></p>
