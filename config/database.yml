@@ -50,5 +50,4 @@ test:
 production:
   <<: *default
   database: tweeter_production
-  username: tweeter
-  password: <%= ENV['tweeter_DATABASE_PASSWORD'] %>
+  url: <%= ENV.fetch['DATABASE_URL'] %>
