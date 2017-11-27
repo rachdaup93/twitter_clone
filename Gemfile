@@ -34,6 +34,10 @@ gem 'jquery-rails'
 # Use for file upload to S3
 gem 'paperclip'
 gem 'aws-sdk', '~> 2.3'
+# Production Database
+group :production do
+  gem 'pg'
+end
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
