@@ -1,0 +1,12 @@
+<section class="edit-form">
+    <%= form_for user, url: user_path(user.id), html: { multipart: true } do |f| %>
+  <div class="edit-form flex">
+        <span class="btn-file">
+            <span class="glyphicon glyphicon-picture"></span>
+          <%= f.file_field image %>
+        </span>
+        <p>Change your <%= imageType %> photo</p>
+          <%= submit_tag("Upload", class: "tweet-button-white") %>
+  </div>
+    <% end %>
+</section>

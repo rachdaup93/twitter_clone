@@ -5,10 +5,10 @@
   </header>
   <div id="content">
     <div class="col-md-3">
-      <%= image_tag('cover', id: "cover") %>
+      <%= image_tag get_cover(@currentUser), id:"cover" %>
       <div id="user-info">
         <div class="flex">
-          <%= image_tag('profile')%>
+          <%= link_to image_tag(get_avatar(@currentUser, ''), class:"img-circle"), profile_personal_path %>
           <div>
             <h1><%= @currentUser.full_name %></h1>
             <p><%= @currentUser.email %></p>
@@ -17,7 +17,7 @@
           <div>
             <div class="col-md-4">
               <p>Tweets</p>
-              <%= link_to(@currentUser.tweets.count, profile_personal_path) %>
+              <%= @currentUser.tweets.count %>
             </div>
             <div class="col-md-4">
               <p>Following</p>
@@ -41,7 +41,7 @@
       <% @potentialFollows.each do |user| %>
           <div class="users">
             <div class="flex">
-            <%= image_tag('profile') %>
+            <%= image_tag get_avatar(user, ''), class:"img-circle"   %>
             <h2><%= user.full_name %><%= image_tag('check', class:"check") %></h2>
             <p><%= user.email %></p>
             </div>

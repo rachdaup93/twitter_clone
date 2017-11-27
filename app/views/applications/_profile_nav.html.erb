@@ -13,7 +13,7 @@
   <div>
         <span class="dropdown">
           <span class="dropdown-toggle" type="button" id="profile-menu" data-toggle="dropdown">
-            <%= image_tag('profile') %>
+            <%= image_tag get_avatar(@currentUser, 'thumb'), class:"img-circle"%>
           </span>
           <ul class="dropdown-menu" aria-labelledby="profile-menu">
             <li><%= link_to('Logout', logout_path) %></li>

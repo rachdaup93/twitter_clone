@@ -1,6 +1,6 @@
 <section id="edit-tweets">
   <div class="form flex">
-    <%= image_tag('profile') %>
+    <%= image_tag get_avatar(user, 'thumb'), class: "img-circle" %>
     <%= form_for(tweet) do |f| %>
         <%= f.text_area(:description, class: 'tweet_description', maxlength: 240, placeholder: "What's happening?", required: true) %>
         <div class="footer flex">

@@ -1,0 +1,16 @@
+<section id="edit-user">
+  <div class="form flex">
+    <%= form_for @user, html: { multipart: true } do |f| %>
+        <%= f.text_field :full_name %>
+        <span class="btn-file">
+            <span class="glyphicon glyphicon-picture"></span>
+          <%= f.file_field :image %>
+        </span>
+        <div class="footer flex btn-file">
+          <span class="glyphicon glyphicon-save">
+            <%= submit_tag '' %>
+          </span>
+        </div>
+    <% end %>
+  </div>
+</section>

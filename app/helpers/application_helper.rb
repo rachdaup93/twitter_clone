@@ -14,4 +14,27 @@ module ApplicationHelper
     puts user.tweets.class
     render(partial:'applications/tweet_list', local: @tweetList)
   end
+
+  def get_avatar(user, type)
+    if user.avatar.present?
+      case type
+        when "thumb"
+          user.avatar.url(:thumb)
+        when "medium"
+          user.avatar.url(:medium)
+        else
+          user.avatar.url
+      end
+    else
+      "profile.svg"
+    end
+  end
+
+  def get_cover(user)
+    if user.cover.present?
+      user.cover.url
+    else
+      "cover.jpg"
+    end
+  end
 end

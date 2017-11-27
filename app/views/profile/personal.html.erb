@@ -4,7 +4,7 @@
     <%= flash_messages() %>
   </header>
   <div id="jumbotron" class="flex">
-    <%= image_tag('cover', id: "cover") %>
+    <%= image_tag get_cover(@currentUser), id: "cover" %>
   </div>
   <nav id="banner">
     <div class="flex">
@@ -26,14 +26,16 @@
           <p><%= @currentUser.likes.count %></p>
         </div>
       </div>
-      <%= link_to 'Edit Profile', edit_user_path(@currentUser), class: "tweet-button-white" %>
+      <%= link_to 'Edit Profile', edit_user_path(@currentUser), remote: true, class: "tweet-button-white" %>
     </div>
   </nav>
   <div id="content">
     <div class="col-md-3">
       <div id="user-info">
         <div class="flex">
-          <%= image_tag('profile') %>
+          <div id="profile-image">
+            <%= image_tag get_avatar(@currentUser, 'medium'), class:"img-circle" %>
+          </div>
           <div>
             <h1><%= @currentUser.full_name %></h1>
             <p><span class="glyphicon glyphicon-envelope"></span>
@@ -59,7 +61,7 @@
       <% @potentialFollows.each do |user| %>
           <div class="users">
             <div class="flex">
-              <%= image_tag('profile') %>
+              <%= image_tag get_avatar(user, ''), class:"img-circle" %>
               <h2><%= user.full_name %><%= image_tag('check', class:"check") %></h2>
               <p><%= user.email %></p>
             </div>

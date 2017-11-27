@@ -1,6 +1,6 @@
 <section id="new-tweets">
   <div class="form flex">
-    <%= image_tag('profile') %>
+    <%= image_tag get_avatar(@currentUser, "thumb"), class: "img-circle" %>
     <%= form_for(:tweet, url: { controller: :tweets, action: :create }) do |f| %>
         <%= f.text_area(:description, maxlength: 240, class: "tweet_description", placeholder: "What's happening?", required: true) %>
         <div class="footer flex">

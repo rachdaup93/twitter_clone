@@ -12,10 +12,18 @@ class User < ApplicationRecord
 
   EMAIL_REGEX = /[a-z0-9\.]+@[a-z0-9]+\.[a-z]{2,63}/i
   has_secure_password
-  validates :password, presence: true,
-                       length: { in: 8..76 }
+  validates :password, length: { in: 8..76 }, on: create
   validates :email, presence: true,
                     format: { with: EMAIL_REGEX, message: "is not a valid email" }
+  has_attached_file :avatar, styles: {
+      thumb: '32x32#',
+      normal: '72x72#',
+      medium: '200x200#'
+  }, default_style: :normal
 
+  has_attached_file :cover
+
+  validates_attachment_content_type :avatar , content_type: /\Aimage\/.*\Z/
+  validates_attachment_content_type :cover , content_type: /\Aimage\/.*\Z/
 
 end

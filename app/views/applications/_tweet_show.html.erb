@@ -1,7 +1,7 @@
 <div id="<%= dom_id(tweet[:tweet])%>" class="tweet panel panel-default">
   <div class="header flex">
     <div class="flex">
-      <%= image_tag('profile') %>
+        <%= image_tag get_avatar(tweet[:author], "thumb"), class:"img-circle" %>
       <span>
           <h2><%= tweet[:author].full_name %><%= image_tag('check', id:"check") %></h2>
           <p><%= tweet[:author].email %></p>

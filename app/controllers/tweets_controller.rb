@@ -39,6 +39,17 @@ class TweetsController < ApplicationController
     end
   end
 
+  def update
+    @tweet = Tweet.find_by_id(params[:id])
+    @tweet.update_attributes(tweet_params)
+    if @tweet.save
+      flash[:notice] = "Tweet updated successfully."
+      redirect_to('/')
+    else
+      redirect_to(:edit)
+    end
+  end
+
   def delete
     @tweet = Tweet.find_by_id(params[:id])
     respond_to do |format|
@@ -70,16 +81,6 @@ class TweetsController < ApplicationController
 
   end
 
-  def update
-    @tweet = Tweet.find_by_id(params[:id])
-    @tweet.update_attributes(tweet_params)
-    if @tweet.save
-      flash[:notice] = "Tweet updated successfully."
-      redirect_to('/')
-    else
-      redirect_to(:edit)
-    end
-  end
 
   def dislikes
     @currentUser = current_user

@@ -1,0 +1,5 @@
+const editCoverImage = "<%= j render(partial: 'applications/user_image_edit', locals: { user: @user, image: :cover, imageType: 'header' })%>"
+$('#jumbotron').append(editCoverImage)
+
+const editAvatarImage = "<%= j render(partial: 'applications/user_image_edit', locals: { user: @user, image: :avatar, imageType: 'profile' })%>"
+$('#profile-image').append(editAvatarImage)
