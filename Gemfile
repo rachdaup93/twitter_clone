@@ -35,9 +35,9 @@ gem 'jquery-rails'
 gem 'paperclip'
 gem 'aws-sdk', '~> 2.3'
 # Production Database
-group :production do
-  gem 'pg'
-end
+# gem 'pg'
+# Authentication
+gem 'devise'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

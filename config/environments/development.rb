@@ -52,6 +52,8 @@ Rails.application.configure do
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
   Paperclip.options[:command_path] = "/usr/local/bin/"
 
   config.paperclip_defaults = {
@@ -63,4 +65,6 @@ Rails.application.configure do
           secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'],
       }
   }
-end
+  end
+
+
