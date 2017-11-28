@@ -15,8 +15,7 @@ class User < ApplicationRecord
   has_many :followers, through: :follower_followships, source: :follower
 
   EMAIL_REGEX = /[a-z0-9\.]+@[a-z0-9]+\.[a-z]{2,63}/i
-  has_secure_password
-  validates :password, length: { in: 8..76 }, on: create
+
   validates :email, presence: true,
                     format: { with: EMAIL_REGEX, message: "is not a valid email" }
   has_attached_file :avatar, styles: {
