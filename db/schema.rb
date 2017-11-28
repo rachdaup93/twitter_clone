@@ -12,7 +12,10 @@
 
 ActiveRecord::Schema.define(version: 20171127175557) do
 
-  create_table "followships", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "followships", force: :cascade do |t|
     t.integer "follower_id"
     t.integer "followee_id"
     t.datetime "created_at", null: false
@@ -22,22 +25,22 @@ ActiveRecord::Schema.define(version: 20171127175557) do
     t.index ["follower_id"], name: "index_followships_on_follower_id"
   end
 
-  create_table "tweet_likes", id: false, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "tweet_likes", id: false, force: :cascade do |t|
     t.integer "user_id"
     t.integer "tweet_id"
     t.index ["user_id", "tweet_id"], name: "index_tweet_likes_on_user_id_and_tweet_id"
   end
 
-  create_table "tweets", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "tweets", force: :cascade do |t|
     t.integer "user_id", null: false
-    t.text "description", limit: 255
+    t.text "description"
     t.integer "likes", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_tweets_on_user_id"
   end
 
-  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "users", force: :cascade do |t|
     t.string "full_name"
     t.string "email"
     t.string "password_digest"
