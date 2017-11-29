@@ -4,6 +4,6 @@ class AddDetailsToUser < ActiveRecord::Migration[5.1]
   end
 
   def down
-    # remove_column :user, :full_name
+    remove_column :user, :full_name
   end
 end
