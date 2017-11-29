@@ -1,12 +1,18 @@
 Rails.application.routes.draw do
 
-  devise_for :users
-  # , controllers: { sessions: 'users/sessions' }
+  devise_for :users, controllers: { sessions: 'users/sessions', registrations: 'users/registrations' }
 
-  root "tweets#new"
-
-  get "/profile", to: "profile#index"
-  get "/profile/personal", to: "profile#personal"
+  devise_scope :user do
+    authenticated :user do
+      root to: "profile#index"
+      get "/profile/personal", to: "profile#personal"
+    end
+    unauthenticated :user do
+      get "/signup", to: "devise/registrations#new"
+      root to: "devise/registrations#new", as: :unauthenticated_root
+      get "/login", to: "devise/sessions#new"
+    end
+  end
 
   resources :follows
   resources :tweets do

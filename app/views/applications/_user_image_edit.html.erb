@@ -1,5 +1,5 @@
 <section class="edit-form">
-    <%= form_for user, url: user_path(user.id), html: { multipart: true } do |f| %>
+    <%= form_for user, url: user_registration_path, html: { multipart: true , method: :put } do |f| %>
   <div class="edit-form flex">
         <span class="btn-file">
             <span class="glyphicon glyphicon-picture"></span>

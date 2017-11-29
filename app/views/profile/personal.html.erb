@@ -26,7 +26,7 @@
           <p><%= @currentUser.likes.count %></p>
         </div>
       </div>
-      <%= link_to 'Edit Profile', edit_user_path(@currentUser), remote: true, id: "edit-profile-btn",class: "tweet-button-white" %>
+      <%= link_to 'Edit Profile', edit_user_registration_path, remote: true, id: "edit-profile-btn",class: "tweet-button-white" %>
     </div>
   </nav>
   <div id="content">

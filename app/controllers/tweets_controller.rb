@@ -10,6 +10,7 @@ class TweetsController < ApplicationController
   end
 
   def create
+    @user = current_user
     @newtweet = Tweet.new(tweet_params)
     @user.tweets << @newtweet
     if @newtweet.save
@@ -28,6 +29,7 @@ class TweetsController < ApplicationController
   end
 
   def edit
+    @user = current_user
     @tweet = Tweet.find_by_id(params[:id])
     respond_to do |format|
       format.html
@@ -40,7 +42,7 @@ class TweetsController < ApplicationController
     @tweet.update_attributes(tweet_params)
     if @tweet.save
       flash[:notice] = "Tweet updated successfully."
-      redirect_to('/')
+      redirect_to('/profile')
     else
       redirect_to(:edit)
     end
@@ -57,10 +59,11 @@ class TweetsController < ApplicationController
   def destroy
     tweet = Tweet.find_by_id(params[:id])
     tweet.destroy
-    redirect_to('/')
+    redirect_to'/'
   end
 
   def likes
+    @currentUser = current_user
     tweet = Tweet.find_by_id(params[:id])
     tweet.likes += 1
     tweet.likers << @currentUser
@@ -70,7 +73,7 @@ class TweetsController < ApplicationController
       flash[:error] = "Tweet could not be liked."
     end
     respond_to do |format|
-      format.html { redirect_to('/') }
+      format.html { redirect_to '/' }
       format.js
     end
 
@@ -88,7 +91,7 @@ class TweetsController < ApplicationController
       flash[:error] = "Tweet could not be unliked."
     end
     respond_to do |format|
-      format.html { redirect_to('/') }
+      format.html { redirect_to '/' }
       format.js
     end
 

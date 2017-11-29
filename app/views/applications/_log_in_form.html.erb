@@ -1,7 +1,13 @@
-<%= form_tag(action: :attempt_login) do %>
-    <%= text_field_tag(:email, nil, class: "form-input", placeholder: "Email") %>
-    <%= password_field_tag(:password, nil, class: "form-input", placeholder: "Password", minlength: 8, maxlength: 76) %>
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <%= f.email_field :email, class: "form-input", placeholder: "Email", autofocus: true %>
+    <%= f.password_field :password, class: "form-input", placeholder: "Password", minlength: 8, maxlength: 76, autocomplete: "off" %>
+    <% if devise_mapping.rememberable? -%>
+        <div class="field">
+          <%= f.check_box :remember_me %>
+          <%= f.label :remember_me %>
+        </div>
+    <% end -%>
     <div>
-      <%= submit_tag("Log in", class: "form-button") %>
+      <%= f.submit "Log in", class: "form-button" %>
     </div>
 <% end %>
