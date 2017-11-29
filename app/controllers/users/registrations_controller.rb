@@ -50,7 +50,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     self.resource = resource_class.to_adapter.get!(send(:"current_#{resource_name}").to_key)
     prev_unconfirmed_email = resource.unconfirmed_email if resource.respond_to?(:unconfirmed_email)
 
-    resource_updated = update_resource(resource, account_update_params)
+    resource_updated = update_resource_without_password(resource, account_update_params)
     yield resource if block_given?
     if resource_updated
       puts "Update Successful."
@@ -63,7 +63,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
       respond_with resource, location: after_update_path_for(resource)
     else
       puts "Update Failed."
-      puts resource.errors.full_message
+      puts resource_updated
+      puts resource_updated.errors
       clean_up_passwords resource
       set_minimum_password_length
       respond_with resource
@@ -103,6 +104,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
     resource.update_with_password(params)
   end
 
+  def update_resource_without_password(resource, params)
+    resource.update_attributes(params)
+  end
+
   # Build a devise resource passing in the session. Useful to move
   # temporary session data to the newly created user.
   def build_resource(hash=nil)
@@ -133,7 +138,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # The default url to be used after updating a resource. You need to overwrite
   # this method in your own RegistrationsController.
   def after_update_path_for(resource)
-    signed_in_root_path(resource)
+    "/profile/personal"
   end
 
   # Authenticates the current scope and gets the current resource from the session.

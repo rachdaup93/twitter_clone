@@ -15,7 +15,7 @@ class TweetsController < ApplicationController
     @user.tweets << @newtweet
     if @newtweet.save
       flash[:notice] = "Tweet has been tweeted."
-      redirect_to "/profile"
+      redirect_to "/"
     else
       flash[:error] = @newtweet.errors.full_messages
       redirect_to action: :new
@@ -42,7 +42,7 @@ class TweetsController < ApplicationController
     @tweet.update_attributes(tweet_params)
     if @tweet.save
       flash[:notice] = "Tweet updated successfully."
-      redirect_to('/profile')
+      redirect_to '/'
     else
       redirect_to(:edit)
     end
@@ -59,7 +59,7 @@ class TweetsController < ApplicationController
   def destroy
     tweet = Tweet.find_by_id(params[:id])
     tweet.destroy
-    redirect_to'/'
+    redirect_to '/'
   end
 
   def likes

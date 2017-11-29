@@ -1,3 +1,88 @@
-// Place all the styles related to the registrations controller here.
+// Place all the styles related to the Access controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+  background-color: #E6ECF0;
+}
+
+@keyframes flash-exit {
+  from { top: 0; }
+  to { top: -70px; }
+}
+
+@keyframes flash-intro {
+  from { top: -70px; }
+  to { top: 0; }
+}
+
+.success,
+.error {
+  position: absolute;
+  z-index: 99;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 400px;
+  height: 70px;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #FFFFFF;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+.success {
+  top: 0;
+  animation-name: flash-exit;
+  animation-delay: 2s;
+  background-color: #6AE0A1;
+}
+
+.error {
+  top: -50px;
+  animation-name: flash-intro;
+  background-color: #EA342F;
+}
+
+#login .banner,
+.profile nav {
+  position: relative;
+  height: 60px;
+  background-color: #fff;
+  box-shadow: 5px 0 5px #2E2F30;
+  align-items: center;
+}
+
+#login {
+  .panel {
+    width: 60%;
+    margin: 50px auto;
+    padding: 25px;
+  }
+  .form-box {
+    padding: 0;
+  }
+  .banner {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 22%;
+    .login-logo {
+      height: 25px;
+    }
+    .links a {
+      padding: 0 7px;
+    }
+  }
+}
+a,
+a:active,
+a:visited,
+a:focus,
+input:focus,
+button,
+button:focus,
+button:active,
+button:visited {
+  outline: none;
+}

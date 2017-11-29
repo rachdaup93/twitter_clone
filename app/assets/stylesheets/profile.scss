@@ -11,6 +11,19 @@ a:hover {
   nav {
     justify-content: space-between;
     padding: 0 5%;
+    .edit_user input {
+      background: none;
+      border: none;
+      text-align: center;
+      width: 100%;
+    }
+    .links {
+      color: #60B4A3;
+      a {
+        padding-right: 20px;
+        color: #60B4A3;
+      }
+    }
   }
 
   #content{
@@ -107,6 +120,7 @@ a:hover {
         }
         img {
           width: 200px;
+          height: 200px;
         }
       }
       img {

@@ -7,6 +7,9 @@
     </div>
     <span>Language: <b>English</b></span>
   </nav>
+  <% if !flash[:alert].blank? %>
+    <div class="flash error flex"><%= flash[:alert]%></div>
+  <% end %>
   <%= flash_messages() %>
   <div class="panel panel-default">
     <div class="container form-box">

@@ -1,10 +1,10 @@
 <% if !flash[:notice].blank? %>
-    <div class="notice">
+    <div class="flash flex success">
       <%= flash[:notice] %>
     </div>
 <% end %>
 <% if !flash[:error].blank? %>
-    <div class="error">
+    <div class="flash flex error">
       <% flash[:error].each do |err| %>
           <p><%= err %></p>
       <% end %>
