@@ -1,19 +1,16 @@
 class TweetsController < ApplicationController
   include TweetGetter
-  before_action :confirm_logged_in
 
   def index
     @tweetList = get_tweet_list
   end
 
   def new
-    @user = current_user
     @newtweet = Tweet.new
   end
 
   def create
     @newtweet = Tweet.new(tweet_params)
-    @user = current_user
     @user.tweets << @newtweet
     if @newtweet.save
       flash[:notice] = "Tweet has been tweeted."
@@ -31,7 +28,6 @@ class TweetsController < ApplicationController
   end
 
   def edit
-    @user = current_user
     @tweet = Tweet.find_by_id(params[:id])
     respond_to do |format|
       format.html
@@ -65,7 +61,6 @@ class TweetsController < ApplicationController
   end
 
   def likes
-    @currentUser = current_user
     tweet = Tweet.find_by_id(params[:id])
     tweet.likes += 1
     tweet.likers << @currentUser

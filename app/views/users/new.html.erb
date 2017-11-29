@@ -10,9 +10,8 @@
   <div class="container form-box">
     <%= flash_messages() %>
     <h1>Join Twitter today.</h1>
-    <%= form_for(:user, url: { action: :create }) do |f| %>
+    <%= form_for :user, url: { action: :create } do |f| %>
         <%= f.text_field(:full_name, class: "form-input", placeholder: "Full Name", required: true) %>
-        <%= f.text_field(:email, class: "form-input", placeholder: "Email", required: true, pattern: User::EMAIL_REGEX.source) %>
         <%= f.password_field(:password, class: "form-input", placeholder: "Password", minlength: 8, maxlength: 76, required: true) %>
         <div>
           <%= submit_tag("Sign up", id: "sign-up", class: "form-button") %>

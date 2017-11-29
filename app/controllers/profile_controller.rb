@@ -1,9 +1,9 @@
 class ProfileController < ApplicationController
   include UserGetter
-  before_action :confirm_logged_in, only: [:index, :personal]
 
   def index
     @currentUser = current_user
+    puts @currentUser.inspect
     @potentialFollows = get_other_users
   end
 

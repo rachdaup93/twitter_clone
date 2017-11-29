@@ -1,18 +1,14 @@
 Rails.application.routes.draw do
 
   devise_for :users
-  root "users#new"
+  # , controllers: { sessions: 'users/sessions' }
 
-  get "/login", to: "access#login"
-  get "/logout", to: "access#logout"
-  get "/signup", to: "users#new"
+  root "tweets#new"
+
   get "/profile", to: "profile#index"
   get "/profile/personal", to: "profile#personal"
 
-  post "/attempt_login", to: "access#attempt_login"
-
   resources :follows
-  resources :users
   resources :tweets do
     member do
       post "likes"
