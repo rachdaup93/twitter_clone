@@ -42,7 +42,7 @@
           <div class="users">
             <div class="flex">
             <%= image_tag get_avatar(user, ''), class:"img-circle"   %>
-            <h2><%= user.full_name %><%= image_tag('check', class:"check") %></h2>
+            <h2><%= user.full_name %><%= image_tag('check.svg', class:"check") %></h2>
             <p><%= user.email %></p>
             </div>
             <% if @currentUser.followees.include?(user)%>
