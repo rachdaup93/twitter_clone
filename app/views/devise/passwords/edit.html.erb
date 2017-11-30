@@ -20,10 +20,10 @@
       <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
           <%= f.hidden_field :reset_password_token %>
           <div class="field">
+            <%= f.password_field :password, placeholder: "New Password", class: "form-input", autofocus: true, required: true, autocomplete: "off" %>
             <% if @minimum_password_length %>
                 <em>(<%= @minimum_password_length %> characters minimum)</em><br />
             <% end %>
-            <%= f.password_field :password, placeholder: "New Password", class: "form-input", autofocus: true, required: true, autocomplete: "off" %>
           </div>
           <div class="field">
             <%= f.password_field :password_confirmation, placeholder: "Confirm New Password", class: "form-input", required: true, autocomplete: "off" %>
