@@ -8,9 +8,11 @@
     <span>Language: <b>English</b></span>
   </nav>
   <% if resource.errors.present? %>
-    <% resource.errors.full_messages.each do |message| %>
-      <p><%= message %></p>
-    <% end %>
+    <div class="flash flex error">
+      <% resource.errors.full_messages.each do |message| %>
+        <p><%= message %></p>
+      <% end %>
+    </div>
   <% end %>
   <div class="panel panel-default">
     <div class="container form-box">
